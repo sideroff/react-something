@@ -8,12 +8,12 @@ const app = express()
 
 let port = 3000
 
-app.get('/', function (req, res) {
+app.use(express.static('dist'))
+
+app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'))
 })
 
-app.use(express.static('dist'))
-
 app.listen(port, function () {
-    console.log('Server listening on port: ', port)
+  console.log('Server listening on port: ', port)
 })
