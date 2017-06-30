@@ -12,8 +12,10 @@ export default class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/contacts" component={Contacts} />
+          <Header></Header>
+          <Route exact path='/' component={Body} />
+          <Route exact path='/contacts' component={Contacts} />
+          <Footer></Footer>
         </div>
       </BrowserRouter>
     )

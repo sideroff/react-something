@@ -19,7 +19,7 @@ const watch = true // should depend on the env
 module.exports = {
     entry: {
         app: './client/index.js',
-        vendors: ['react', 'react-dom']
+        vendors: ['react', 'react-dom', 'react-router-dom']
     },
     output: {
         path: path.join(__dirname, 'dist'),
