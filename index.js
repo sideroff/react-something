@@ -6,13 +6,20 @@ const fs = require('fs')
 const express = require('express')
 const app = express()
 
-let port = 3000
+let port = 9000
 
-app.use(express.static('dist'))
+
+
+app.get('/api/test', function(req, res) {
+  console.log('received test')
+  res.send({data: 'testing'})
+})
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'))
 })
+
+app.use(express.static('dist'))
 
 app.listen(port, function () {
   console.log('Server listening on port: ', port)

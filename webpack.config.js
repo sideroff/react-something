@@ -14,8 +14,6 @@ const UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
     }
 })
 
-const watch = true // should depend on the env
-
 module.exports = {
     entry: {
         app: './client/index.js',
@@ -25,7 +23,14 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    watch: watch,
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:9000',
+                secure: false
+            }
+        }
+    },
     watchOptions: {
         ignored: [/node_modules/]
     },
