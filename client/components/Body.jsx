@@ -6,6 +6,7 @@ export default class Body extends React.Component {
 
         this.test = this.test.bind(this)
     }
+
     test() {
         fetch('api/test').then(response => {
             response.json().then(res => console.log(res))
@@ -13,6 +14,7 @@ export default class Body extends React.Component {
             console.dir(error)
         })
     }
+
     render() {
         return (
             <main>

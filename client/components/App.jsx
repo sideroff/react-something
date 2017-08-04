@@ -10,14 +10,16 @@ import { BrowserRouter, Route } from 'react-router-dom'
 export default class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Header></Header>
-          <Route exact path='/' component={Body} />
-          <Route exact path='/contacts' component={Contacts} />
-          <Footer></Footer>
-        </div>
-      </BrowserRouter>
+      <div>
+        <Header></Header>
+        <BrowserRouter>
+          <div>
+            <Route exact path='/' component={Body} />
+            <Route exact path='/contacts' component={Contacts} />
+          </div>
+        </BrowserRouter>
+        <Footer></Footer>
+      </div>
     )
   }
 }
