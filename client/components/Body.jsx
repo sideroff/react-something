@@ -5,6 +5,7 @@ export default class Body extends React.Component {
         super(props)
 
         this.test = this.test.bind(this)
+        this.a = 5
     }
 
     test() {

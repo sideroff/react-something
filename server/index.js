@@ -11,12 +11,11 @@ const app = express()
 
 require('./config/router.js')(app, config)
 
-app.use(express.static('dist'))
 
 mongoose.connect(config.database.connectionString, { useMongoClient: true })
   .then(() => {
     console.log('Connection to database was successful.\n Starting server...')
-    app.listen(config.port, function () {
+    app.listen(config.port, () => {
       console.log('Server listening on port: ', config.port)
     })
   })

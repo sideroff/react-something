@@ -23,14 +23,7 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    devServer: {
-        proxy: {
-            '/api': {
-                target: 'http://localhost:9000',
-                secure: false
-            }
-        }
-    },
+    watch: true,
     watchOptions: {
         ignored: [/node_modules/]
     },
