@@ -6,24 +6,22 @@ import Contacts from './Contacts.jsx'
 import NotFound from './NotFound.jsx'
 import Footer from './Footer.jsx'
 import Navigation from './Navigation.jsx'
-import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <BrowserRouter>
-          <div>
-            <Header></Header>
+      < BrowserRouter >
+        <div>
+          <Header />
+          <Switch>
             <Route exact path='/' component={Body} />
-            <Route exact path='/contacts' component={Contacts} />
-            <Route path='/404' component={NotFound} />
-
-            <Redirect from='*' to='/404' />
-            <Footer></Footer>
-          </div>
-        </BrowserRouter>
-      </div>
+            <Route path='/contacts' component={Contacts} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </BrowserRouter >
     )
   }
 }
