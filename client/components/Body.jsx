@@ -20,6 +20,10 @@ export default class Body extends React.Component {
         return (
             <main>
                 <h1>HI THIS IS BODY</h1>
+                <form action="">
+                    <label htmlFor="username">Username</label>
+                    <input type="text" id="username" />
+                </form>
                 <button onClick={this.test}>Test</button>
             </main>
         )

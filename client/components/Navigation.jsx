@@ -9,6 +9,7 @@ export default class Navigation extends React.Component {
             <div>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/contacts">Contacts</NavLink>
+                <NavLink to="/authors">Authors</NavLink>
             </div>
         )
     }
