@@ -11,8 +11,7 @@ export default class AuthorForm extends React.Component {
                         name="firstName"
                         placeholder="First Name"
                         ref="firstName"
-                        onChange={this.props.onChange}
-                        value={this.props.author.firstName} />
+                        value="" />
                     <br />
                     <label htmlFor="lastName">Last Name</label>
                     <input type="text"

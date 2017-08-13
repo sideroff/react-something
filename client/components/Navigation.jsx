@@ -1,17 +1,14 @@
 import React from 'react'
-import App from './App.jsx'
-import Contacts from './Contacts.jsx'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class Navigation extends React.Component {
     render() {
         return (
             <div>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/contacts">Contacts</NavLink>
-                <NavLink to="/authors">Authors</NavLink>
+                <Link to="/">Home</Link>
+                <Link to="/contacts">Contacts</Link>
+                <Link to="/authors">Authors</Link>
             </div>
         )
     }
 }
-

@@ -1,17 +1,22 @@
 import React from 'react'
-import AuthorForm from './AuthorForm.jsx'
 
-const ManageAuthorPage = React.createClass ({
-    getInitialState: function() {
-        return { author: { id: '', firstName: '', lastName: '' } }
-    },
-    setAuthorState: function(event) {
+import AuthorForm from '../AuthorForm.jsx'
+
+export default class ManageAuthorPage extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = { author: { id: '', firstName: '', lastName: '' } }
+    }
+
+    setAuthorState(event) {
         let field = event.target.name
         let value = event.target.value
         this.state.author[field] = value
         return this.setState({ author: this.state.author })
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <div>
                 <h1>Authors</h1>
@@ -21,5 +26,6 @@ const ManageAuthorPage = React.createClass ({
             </div>
         )
     }
-})
+}
+
 module.exports = ManageAuthorPage
