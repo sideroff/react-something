@@ -1,26 +1,35 @@
+import { EventEmitter } from 'events'
+
 import Dispatcher from '../dispatcher/dispatcher'
 import ActionTypes from '../constants/actionTypes'
-import { EventEmitter } from 'events'
 
 let _authors = []
 
-const AuthorStore = Object.assign({}, EventEmitter.prototype, {
+export default class AuthorStore extends EventEmitter {
+    constructor(props) {
+        super(props)
+    }
+
     addChangeListener(callback) {
         this.on('change', callback)
-    },
+    }
+
     removeChangeListener(callback) {
         this.removeListener('change', callback)
-    },
+    }
+
     emitChange() {
         this.emit('change')
-    },
+    }
+
     getAllAuthors() {
         return _authors
-    },
+    }
+
     getAuthorsCount(id) {
         return _authors.length
     }
-})
+}
 
 Dispatcher.register(action => {
     switch (action.actionType) {
@@ -29,5 +38,3 @@ Dispatcher.register(action => {
             AuthorStore.emitChange()
     }
 })
-
-module.exports = AuthorStore

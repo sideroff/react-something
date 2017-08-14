@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Input from './common/Input.jsx'
+
 export default class AuthorForm extends React.Component {
     render() {
         return (
@@ -13,6 +15,7 @@ export default class AuthorForm extends React.Component {
                         ref="firstName"
                         value="" />
                     <br />
+                    <Input />
                     <label htmlFor="lastName">Last Name</label>
                     <input type="text"
                         name="lastName"

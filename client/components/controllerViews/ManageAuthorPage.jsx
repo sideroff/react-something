@@ -6,6 +6,8 @@ export default class ManageAuthorPage extends React.Component {
     constructor(props) {
         super(props)
 
+        this.setAuthorState = this.setAuthorState.bind(this)
+
         this.state = { author: { id: '', firstName: '', lastName: '' } }
     }
 
