@@ -12,6 +12,7 @@ export default class ManageAuthorPage extends React.Component {
     }
 
     setAuthorState(event) {
+        console.log('change')
         let field = event.target.name
         let value = event.target.value
         this.state.author[field] = value

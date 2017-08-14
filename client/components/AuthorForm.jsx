@@ -8,23 +8,24 @@ export default class AuthorForm extends React.Component {
             <div>
                 <h2>AuthorForm</h2>
                 <form>
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text"
-                        name="firstName"
-                        placeholder="First Name"
-                        ref="firstName"
-                        value="" />
+                    <Input
+                        labelFor="firstName"
+                        labelText="First Name"
+                        type="text"
+                        name="firstName" 
+                        ref="firstName" 
+                        onChange={this.props.onChange} 
+                        value={this.props.author.firstName} />
                     <br />
-                    <Input />
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text"
-                        name="lastName"
-                        placeholder="Last Name"
+                    <Input
+                        labelFor="lastName"
+                        labelText="Last Name"
+                        type="text"
+                        name="lastName" 
                         ref="lastName"
-                        onChange={this.props.onChange}
+                        onChange={this.props.onChange} 
                         value={this.props.author.lastName} />
                     <br />
-
                     <input type="submit"
                         value="Save" />
                 </form >
