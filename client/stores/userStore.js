@@ -3,9 +3,9 @@ import { EventEmitter } from 'events'
 import Dispatcher from '../dispatcher/dispatcher'
 import ActionTypes from '../constants/actionTypes'
 
-let _authors = []
+let _users = []
 
-export default class AuthorStore extends EventEmitter {
+export default class UserStore extends EventEmitter {
     constructor(props) {
         super(props)
     }
@@ -21,20 +21,13 @@ export default class AuthorStore extends EventEmitter {
     emitChange() {
         this.emit('change')
     }
-
-    getAllAuthors() {
-        return _authors
-    }
-
-    getAuthorsCount(id) {
-        return _authors.length
-    }
 }
 
 Dispatcher.register(action => {
     switch (action.actionType) {
-        case ActionTypes.CREATE_AUTHOR:
-            _authors.push(action.author)
-            AuthorStore.emitChange()
+        case action.CREATE_USER:
+            console.log('creating user in store')
+            _users.push(action.payload)
+            UserStore.emitChange()
     }
 })
